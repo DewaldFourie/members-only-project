@@ -1,0 +1,27 @@
+{
+    "name": "members-only-project",
+    "version": "1.0.0",
+    "description": "A member sign-up and login post application",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "connect-mongo": "^3.1.2",
+        "crypto": "^1.0.1",
+        "dotenv": "^8.2.0",
+        "express": "^4.19.2",
+        "express-async-handler": "^1.2.0",
+        "express-session": "^1.18.0",
+        "express-validator": "^7.0.1",
+        "mongodb": "^6.5.0",
+        "mongoose": "^5.13.22",
+        "morgan": "^1.10.0",
+        "passport": "^0.4.1",
+        "passport-local": "^1.0.0",
+        "pug": "^3.0.2"
+    }
+}

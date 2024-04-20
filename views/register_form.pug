@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1=title 
+
+  form(method="post" action="register")
+    label(for="firstName") Enter First Name:
+    br
+    input(type="text" name="firstName" id="firstName" required value=(undefined===newUser ? '' : newUser.firstName))
+    br
+    label(for="lastName") Enter Last Name:
+    br
+    input(type="text" name="lastName" id="lastName" required value=(undefined===newUser ? '' : newUser.lastName))
+    br
+    label(for="username") Enter Username:
+    br
+    input(type="text" name="username" id="username" required)
+    if usernameError 
+      p
+      | The username 
+      span.text-danger #{newUser.username}
+      |  is already taken. Please choose a new one.
+      br
+    br
+    label(for="password") Enter Password:
+    br
+    input(type="password" name="password" id="password" required)
+    br
+    br
+    input(type="submit" value="Submit")
+
+  if errors 
+    ul 
+      for error in errors 
+        li!= error.msg 
