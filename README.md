@@ -1,2 +1,1 @@
-initial readme setup
-testing git performance from vs code
+A members clubhouse project that provides users with sign-up and login capabilities that extends to user related message posts.
