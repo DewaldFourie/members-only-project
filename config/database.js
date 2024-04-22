@@ -31,6 +31,12 @@ const UserSchema = new mongoose.Schema({
     admin: Boolean,
 });
 
+UserSchema.virtual("url").get(function() {
+    
+    return `/user/dashboard/${this._id}`;
+    
+})
+
 // Create a simple schema for a Message. 
 const MessageSchema = new mongoose.Schema({
     title: String,
