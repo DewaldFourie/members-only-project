@@ -14,3 +14,11 @@ exports.user_dashboard_get = asyncHandler(async (req, res, next) => {
     res.render("dashboard", {title: "Dashboard", userDetails: userDetails})
 
 });
+
+exports.user_vip_register_get = asyncHandler(async (req, res, next) => {
+
+    const userDetails = req.user
+
+    res.render("vip_register", {title: "VIP Register", userDetails: userDetails})
+
+})

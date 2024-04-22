@@ -1,8 +1,8 @@
-extends layout 
+extends layout
 
 block content 
   h1= title
-  p Welcome to your Dashboard #{userDetails.username}, You are now logged in as a standard member.
+  p Welcome to your Dashboard #{userDetails.username}, You are now logged in as a #{userDetails.member ? 'VIP member' : 'standard member'}.
   br
   br
   span #{userDetails.username}
@@ -10,4 +10,9 @@ block content
   span #{userDetails.member}
   br
   br
-  a(href="/catalog/user/logout") Logout 
+  // Conditional rendering of the "become a VIP member" link
+  if !userDetails.member
+    a(href=`/catalog/user/dashboard/register_vip/${userDetails.username}` class="vip-link") Become a VIP member
+    br
+  br
+  a(href="/catalog/user/logout") Logout

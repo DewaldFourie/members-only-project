@@ -52,6 +52,9 @@ module.exports = router;
 // GET request for a successful user login 
 router.get('/user/dashboard/:username', isAuth,  dashboard_controller.user_dashboard_get)
 
+// GET request for a VIP member register 
+router.get('/user/dashboard/register_vip/:username', dashboard_controller.user_vip_register_get)
+
 
 /// LOGOUT USER ROUTES ///
 
