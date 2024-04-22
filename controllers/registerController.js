@@ -88,7 +88,7 @@ exports.user_register_post = [
             else {
                 await newUser.save();
                 // redirect to login page
-                res.redirect("/login")
+                res.redirect("/catalog/user/login")
             }
         }
     })

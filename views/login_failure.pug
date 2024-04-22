@@ -1,0 +1,28 @@
+extends layout 
+
+block content
+  h1= title
+  h2 Your Username or Password is Incorrect. Please try again.
+  br
+  h4 
+  | Don't have an account ? Click 
+  a(href="/catalog/user/register") here 
+  | h4 to create one. 
+  br
+  br
+  form(method="POST" action="login")
+    label(for="username") Enter Username:
+    br
+    input(type="text" name="username")
+    br
+    label(for="password") Enter Password:
+    br
+    input(type="password" name="password")
+    br
+    br
+    input(type="submit" value="Submit")
+
+  if errors 
+    ul 
+      for error in errors 
+        li!= error.msg 
