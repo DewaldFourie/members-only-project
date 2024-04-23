@@ -44,7 +44,6 @@ router.post('/user/login', (req, res, next) => {
 
 // GET request for a failed user login 
 router.get('/user/login-failure', login_controller.user_login_failure_get)
-module.exports = router;
 
 
 /// USER DASHBOARD ROUTES ///
@@ -55,6 +54,9 @@ router.get('/user/dashboard/:username', isAuth,  dashboard_controller.user_dashb
 // GET request for a VIP member register 
 router.get('/user/dashboard/register_vip/:username', dashboard_controller.user_vip_register_get)
 
+// POST request for a VIP member register
+router.post('/user/dashboard/register_vip/:username', dashboard_controller.user_vip_register_post)
+
 
 /// LOGOUT USER ROUTES ///
 
@@ -63,3 +65,5 @@ router.get('/user/logout', (req, res, next) => {
     req.logout();
     res.redirect("/catalog/user/login");
 })
+
+module.exports = router;
