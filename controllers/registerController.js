@@ -8,7 +8,6 @@ const User = connection.models.User;
 
 // Display User register form GET
 exports.user_register_get = (req, res, next) => {
-
     res.render("register_form", { title: "Register" })
 };
 
