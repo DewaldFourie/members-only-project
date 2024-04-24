@@ -6,6 +6,7 @@ const register_controller = require("../controllers/registerController");
 const login_controller = require("../controllers/loginController");
 const dashboard_controller = require("../controllers/dashboardController");
 const isAuth = require('./authMiddleware').isAuth;
+const isMember = require('./authMiddleware').isMember;
 const connection = require('../config/database');
 const User = connection.models.User;
 
@@ -52,10 +53,16 @@ router.get('/user/login-failure', login_controller.user_login_failure_get)
 router.get('/user/dashboard/:username', isAuth,  dashboard_controller.user_dashboard_get)
 
 // GET request for a VIP member register 
-router.get('/user/dashboard/register_vip/:username', dashboard_controller.user_vip_register_get)
+router.get('/user/dashboard/register_vip/:username', isAuth, dashboard_controller.user_vip_register_get)
 
 // POST request for a VIP member register
-router.post('/user/dashboard/register_vip/:username', dashboard_controller.user_vip_register_post)
+router.post('/user/dashboard/register_vip/:username', isAuth, dashboard_controller.user_vip_register_post)
+
+// GET request for writing a new Message 
+router.get('/user/dashboard/new_message/:username', isMember, dashboard_controller.new_message_get);
+
+// POST request for writing a new Message
+router.post('/user/dashboard/new_message/:username', isMember, dashboard_controller.new_message_post)
 
 
 /// LOGOUT USER ROUTES ///

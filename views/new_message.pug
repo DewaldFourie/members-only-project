@@ -1,0 +1,24 @@
+extends layout 
+
+block content 
+  h1= title
+  p Here you should write a new message 
+  br
+  br
+  form(method="POST" action=`/catalog/user/dashboard/new_message/${userDetails.username}`)
+    label(for="title") Title:
+    br
+    input(type="text" name="title" placeholder="Title" required)
+    br
+    br
+    label(for="text") Message:
+    br
+    textarea#text(name="text", cols="30", rows="5" placeholder="Enter Message Here" required)   
+    br
+    br
+    input(type="submit" value="Submit")
+
+  if errors 
+    ul 
+      for error in errors 
+        li!= error.msg 

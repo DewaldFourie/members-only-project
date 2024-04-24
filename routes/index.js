@@ -79,12 +79,12 @@ router.get('/protected-route', isAuth, (req, res, next) => {
 
 });
 
-// this is the route to go to the admin page, 
-router.get('/admin-route', isAdmin, (req, res, next) => {
+// // this is the route to go to the admin page, 
+// router.get('/admin-route', isAdmin, (req, res, next) => {
     
-    res.send('You made it to the ADMIN route.');
+//     res.send('You made it to the ADMIN route.');
 
-});
+// });
 
 // Visiting this route logs the user out
 // router.get('/logout', (req, res, next) => {

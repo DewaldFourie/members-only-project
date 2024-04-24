@@ -5,10 +5,24 @@ block content
   p Welcome to your Dashboard #{userDetails.username}, You are now logged in as a #{userDetails.member ? 'VIP member' : 'standard member'}.
   br
   br
+  if allMessages.length 
+    dl 
+      each message in allMessages 
+        dt 
+          span Title: #{message.title} 
+        dd Message: #{message.text}
+        dd Date: #{message.timestampFormatted}
+        dd User: #{message.user.username}
+  br
+  br
   span #{userDetails.username}
   br
   span #{userDetails.member}
   br
+  br
+  if userDetails.member
+    a(href=`/catalog/user/dashboard/new_message/${userDetails.username}`) Create a new Message 
+    br
   br
   // Conditional rendering of the "become a VIP member" link
   if !userDetails.member
