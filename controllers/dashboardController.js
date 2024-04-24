@@ -6,11 +6,13 @@ const User = connection.models.User;
 const Message = connection.models.Message;
 const passport = require('passport');
 const moment = require('moment');
+require('dotenv').config();
 
 
 // Display user dashboard when user login SUCCESS
 exports.user_dashboard_get = asyncHandler(async (req, res, next) => {
     try {
+        // get userDetails and all messages with the user populated and display newest first
         const userDetails = req.user;
         const allMessages = await Message.find().sort({ timestamp: -1 }).populate('user').exec();
         
@@ -29,11 +31,8 @@ exports.user_dashboard_get = asyncHandler(async (req, res, next) => {
 
 // Display new Message Form
 exports.new_message_get = asyncHandler(async (req, res, next) => {
-
     const userDetails = req.user;
-
     res.render("new_message", { title: "Write a new Message", userDetails: userDetails })
-
 })
 
 // Handle the new message Form on POST
@@ -89,9 +88,7 @@ exports.new_message_post = [
 
 // Display VIP login 
 exports.user_vip_register_get = asyncHandler(async (req, res, next) => {
-
     const userDetails = req.user
-
     res.render("vip_register", {title: "VIP Register", userDetails: userDetails})
 
 })
@@ -99,12 +96,13 @@ exports.user_vip_register_get = asyncHandler(async (req, res, next) => {
 // Handle VIP login in POST
 exports.user_vip_register_post = asyncHandler(async (req, res, next) => {
 
+    // Get secret code from form and User details from session 
     const secretCode = req.body.secret_code;
     const username = req.params.username;
     const userDetails = req.user;
 
     // Check if the secret code is correct
-    if (secretCode === "0000") {
+    if (secretCode === process.env.VIP_SECRET_CODE) {
         // update the user's membership status to true
         User.findOneAndUpdate({ username: username }, { member: true }, { new: true }, (err, user) => {
             if (err) {

@@ -11,8 +11,9 @@ block content
         dt 
           span Title: #{message.title} 
         dd Message: #{message.text}
-        dd Date: #{message.timestampFormatted}
-        dd User: #{message.user.username}
+        if userDetails.member
+          dd Date: #{message.timestampFormatted}
+          dd User: #{message.user.username}
   br
   br
   span #{userDetails.username}

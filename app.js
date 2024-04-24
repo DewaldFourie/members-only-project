@@ -26,7 +26,6 @@ var indexRouter = require('./routes/index');
 const catalogRouter = require('./routes/catalog');
 
 
-
 // Create the Express application
 var app = express();
 
