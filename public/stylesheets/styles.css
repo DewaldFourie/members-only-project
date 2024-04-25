@@ -15,3 +15,43 @@
     align-items: center;
     height: 100vh;
 }
+
+/* LOGIN */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: rgb(203, 203, 203);
+    border-radius: 12%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-input {
+    margin-top: 1rem;
+    border-radius: 7px;
+}
+
+.login-submit-btn {
+    border-radius: 7px;
+    width: 4rem;
+    color: green;
+    border-color: green;
+}
