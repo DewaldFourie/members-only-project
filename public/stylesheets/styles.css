@@ -1,10 +1,5 @@
 
 /* LAYOUT */
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
-}
 
 /* INDEX */
 
@@ -33,7 +28,7 @@
     align-items: center;
     padding: 1.5rem;
     background-color: rgb(203, 203, 203);
-    border-radius: 12%;
+    border-radius: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -54,4 +49,73 @@
     width: 4rem;
     color: green;
     border-color: green;
+}
+
+/* LOGIN FAILURE */ 
+
+.login-failure-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin-top: 4rem;
+}
+
+.login-failure-heading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box.fail-box {
+    margin-top: 2rem;
+}
+
+/* REGISTER */
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: rgb(203, 203, 203);
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-input {
+    margin-top: 1rem;
+    border-radius: 7px;
+}
+
+.register-submit-btn {
+    border-radius: 7px;
+    width: 4rem;
+    color: green;
+    border-color: green;
+}
+
+.username-warning {
+    font-size: 11px;
+    max-width: 11rem;
+    text-align: center;
+    margin-top: 2px;
 }
