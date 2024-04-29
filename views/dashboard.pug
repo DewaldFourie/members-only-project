@@ -9,7 +9,7 @@ block content
       if userDetails.member
         span.dashboard-message-box-info 
         a(href=`/catalog/user/dashboard/new_message/${userDetails.username}` class="dashboard-new-message-link" )
-          img(src="/images/new-message.png", alt="+" class="dashboard-new-message-icon") 
+          div.dashboard-new-message-icon 
           span.text-decoration Create a new message
       // Conditional rendering of the "become a VIP member" link
       if !userDetails.member
