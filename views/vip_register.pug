@@ -1,15 +1,11 @@
 extends layout 
 
 block content 
-  h1= title
-  br
-  form(method="post" action="")
-    label(for="secret_code") Enter the secret code to gain access:
-    br
-    input(type="text" name="secret_code")
-    br
-    br
-    input(type="submit" value="Submit")
-    br
-    br
-    a(href=`/catalog/user/dashboard/${userDetails.username}`) Return to Dashboard
+  div.vip-register-container 
+    div.vip-register-box
+      h1= title
+      form(class="vip-register-form" method="post" action="")
+        label(class="vip-register-info" for="secret_code") Enter the secret code to gain access:
+        input(class="vip-register-input" type="text" name="secret_code")
+        input(class="register-submit-btn" type="submit" value="Submit")
+        a(class="vip-return-link" href=`/catalog/user/dashboard/${userDetails.username}`) ← Return to Dashboard
