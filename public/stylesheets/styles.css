@@ -58,6 +58,7 @@
     color: #333;
     border-radius: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-bottom: 10rem;
 }
 
 .login-form {
@@ -82,7 +83,8 @@
 }
 
 .login-submit-btn:hover {
-    background-color: chartreuse;
+    background-color: #333;
+    color: #fff;
 }
 
 /* LOGIN FAILURE */ 
@@ -130,6 +132,7 @@
     color: #333;
     border-radius: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-bottom: 10rem;
 }
 
 .register-form {
@@ -154,7 +157,8 @@
 }
 
 .register-submit-btn:hover {
-    background-color: chartreuse;
+    background-color: #333;
+    color: #fff;
 }
 
 .username-warning {
@@ -173,7 +177,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #f5f5f5; /* Light gray background */
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Container for the heading and welcome message */
@@ -194,9 +198,11 @@
     align-items: center;
     padding: 3rem;
     width: 70%;
+    color: #333;
     background-color: #fff; /* White background */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    margin-bottom: 4rem;
 }
 
 .dashboard-message-box-info {
@@ -274,6 +280,7 @@
     font-size: 18px;
     color: #555; /* Dark gray text color */
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 /* Styling for message text */
@@ -325,6 +332,7 @@
     color: #333;
     border-radius: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-bottom: 10rem;
 }
 
 .vip-register-form{
@@ -346,4 +354,65 @@
 
 .vip-return-link {
     margin-top: 2rem;
+}
+
+/* NEW MESSAGE POST */
+
+.new-message-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.new-message-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    width: 40%;
+}
+
+.new-message-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.new-message-title-input {
+    margin: 1rem;
+    border-radius: 7px;
+    width: 90%;
+}
+
+.new-message-text-input {
+    margin-bottom: 1rem;
+    border: 2px solid;
+    border-radius: 7px;
+    width: 90%;
+    height: 200px;
+}
+
+.new-message-submit-btn {
+    margin-top: 2rem;
+    border-radius: 7px;
+    width: 6rem;
+    color: #333;
+    border-color: #333;
+    cursor: pointer; 
+    transition: background-color 0.7s ease; 
+}
+
+.new-message-submit-btn:hover{
+    background-color: #333;
+    color: #fff;
 }

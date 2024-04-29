@@ -32,7 +32,7 @@ exports.user_dashboard_get = asyncHandler(async (req, res, next) => {
 // Display new Message Form
 exports.new_message_get = asyncHandler(async (req, res, next) => {
     const userDetails = req.user;
-    res.render("new_message", { title: "Write a new Message", userDetails: userDetails })
+    res.render("new_message", { title: "New Message", userDetails: userDetails })
 })
 
 // Handle the new message Form on POST

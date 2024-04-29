@@ -70,7 +70,7 @@ router.post('/user/dashboard/new_message/:username', isMember, dashboard_control
 // GET route for logging a user out
 router.get('/user/logout', (req, res, next) => {
     req.logout();
-    res.redirect("/catalog/user/login");
+    res.redirect("/");
 })
 
 module.exports = router;
