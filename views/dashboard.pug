@@ -25,4 +25,9 @@ block content
                   div.dashboard-message-details
                     span.dashboard-message-author #{message.user.username}
                     span.dashboard-message-date #{message.timestampFormatted}
+                    if userDetails.admin
+                      form(class="dashboard-message-delete-form" action=`/catalog/user/dashboard/delete_msg/${message._id}`, method="POST")
+                        button(class="dashboard-message-delete-btn" type="submit" class="dashboard-message-delete-btn") 
+                          img(class="delete-icon" src="/images/delete.png", alt="Delete")
+
 

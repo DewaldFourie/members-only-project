@@ -2,5 +2,11 @@ extends layout
 
 block content
   div.index-container
-    h1= title
-    p Welcome to #[em MembersOnly], a very exclusive club for software developers around the globe.
+    div.index-box
+      div.index-heading-container
+        h1.index-heading= title
+      p.index-intro Welcome to the #[em exclusive] club for Software Developers around the globe.
+      span.index-info Login to read what our members are posting, if you are new here, please feel free to register and be part of this informative community.
+      div.index-btn-container
+        a(class='index-btn' href='/catalog/user/login') Login 
+        a(class='index-btn' href='/catalog/user/register') Register

@@ -118,3 +118,34 @@ exports.user_vip_register_post = asyncHandler(async (req, res, next) => {
     }
 
 })
+
+exports.delete_message = asyncHandler(async (req, res, next) => {
+    try {
+        const messageId = req.params.messageId; // Assuming messageId is passed in the URL
+        const userDetails = req.user;
+
+        // Check if the logged-in user is an admin
+        if (userDetails.admin) {
+            // Find the message by messageId and ensure the user is the author (optional check)
+            const message = await Message.findById(messageId);
+            
+            if (!message) {
+                return res.status(404).send("Message not found.");
+            }
+
+            // Optionally, you might want to check if the user trying to delete is the author of the message
+            // if (message.user.toString() !== userDetails._id.toString()) {
+            //     return res.status(403).send("You are not authorized to delete this message.");
+            // }
+
+            // If all checks pass, proceed to delete the message
+            await Message.findByIdAndDelete(messageId);
+            res.redirect(`/catalog/user/dashboard/${userDetails.username}`);
+        } else {
+            // If the user is not an admin, handle the unauthorized attempt
+            return res.status(403).send("You are not authorized to delete messages.");
+        }
+    } catch (error) {
+        next(error);
+    }
+});
