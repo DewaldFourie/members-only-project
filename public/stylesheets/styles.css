@@ -232,6 +232,10 @@
     min-height: 100vh;
 }
 
+.dashboard-heading-info {
+    font-size: 24px;
+}
+
 /* Container for the heading and welcome message */
 .dashboard-heading-container {
     display: flex;
@@ -259,6 +263,28 @@
 
 .dashboard-message-box-info {
     display: flex;
+    text-align: center;
+    font-size: 20px;
+}
+
+.dashboard-vip-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #333; /* Dark text color */
+    border: 1px solid #333; /* Dark border */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.dashboard-vip-btn:hover {
+    color: #fff; 
+    background-color: #333; 
+    text-decoration: none;
 }
 
 /* Styling for the new message link */
@@ -273,7 +299,6 @@
     border: 1px solid #333; /* Dark border */
     border-radius: 6px;
     transition: all 0.3s ease;
-    text-decoration: none;
 }
 
 /* Hover state for the new message link */
