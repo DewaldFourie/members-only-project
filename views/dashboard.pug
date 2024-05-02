@@ -4,7 +4,7 @@ block content
   div.dashboard-container
     div.dashboard-heading-container
       h1 #{userDetails.username}'s #{title}
-      p.dashboard-heading-info Welcome to your Dashboard #{userDetails.username}, You are now logged in as a #{userDetails.member ? 'VIP member' : 'standard member'}.
+      p.dashboard-heading-info Welcome to your dashboard #{userDetails.username}, You are now logged in as a #{userDetails.member ? 'VIP member' : 'standard member'}.
     div.dashboard-message-container
       if userDetails.member
         span.dashboard-message-box-info 

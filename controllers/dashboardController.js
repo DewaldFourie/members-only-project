@@ -21,7 +21,7 @@ exports.user_dashboard_get = asyncHandler(async (req, res, next) => {
             message.timestampFormatted = moment(message.timestamp).format('HH:mm DD-MM-YYYY');
         });
 
-        res.render("dashboard", { title: "Dashboard", userDetails: userDetails, allMessages: allMessages });
+        res.render("dashboard", { title: "dashboard", userDetails: userDetails, allMessages: allMessages });
 
     } catch (error) {
         next(error);
