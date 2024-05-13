@@ -4,7 +4,7 @@ block content
   div.new-message-container 
     div.new-message-box
       h1= title
-      p Here you should write a new message 
+      p Add your new post here:
       form(class="new-message-form" method="POST" action=`/catalog/user/dashboard/new_message/${userDetails.username}`)
         input(class="new-message-title-input" type="text" name="title" placeholder="Title" required)
         label(for="text") Message:

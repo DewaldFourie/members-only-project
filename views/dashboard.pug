@@ -3,7 +3,7 @@ extends layout
 block content
   div.dashboard-container
     div.dashboard-heading-container
-      h1 #{userDetails.username}'s #{title}
+      h1.dashboard-header #{userDetails.username}'s #{title}
       p.dashboard-heading-info Welcome to your dashboard #{userDetails.username}, You are now logged in as a #{userDetails.member ? 'VIP member' : 'standard member'}.
     div.dashboard-message-container
       if userDetails.member
