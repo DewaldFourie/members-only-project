@@ -64,6 +64,7 @@ router.get('/user/dashboard/new_message/:username', isMember, dashboard_controll
 // POST request for writing a new Message
 router.post('/user/dashboard/new_message/:username', isMember, dashboard_controller.new_message_post)
 
+// POST request for deleting a Message
 router.post('/user/dashboard/delete_msg/:messageId', isMember, dashboard_controller.delete_message)
 
 
